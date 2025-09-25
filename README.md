@@ -24,10 +24,6 @@ CardioPredict AI is an innovative healthcare solution that uses smartphone camer
 - **📱 Web-Based Platform**: Accessible from any modern browser with camera support
 - **🔒 Privacy-First**: All processing happens locally; no data stored on servers
 
-## 🏆 Hackathon Achievement
-
-**CodeSlayer 2k25 - National Level Hackathon**  
-*Selected among top innovative projects in Healthcare + AI/ML track*
 
 ## 🛠️ Technology Stack
 
