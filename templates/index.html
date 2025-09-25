@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioPredict AI - Heart Health Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">💓</div>
+                <h1>CardioPredict AI</h1>
+            </div>
+            <p class="tagline">Early heart disease risk detection through AI-powered video analysis</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Camera Section -->
+            <section class="camera-section">
+                <div class="camera-container">
+                    <video id="videoElement" autoplay playsinline></video>
+                    <canvas id="canvasElement" style="display: none;"></canvas>
+                    <div class="camera-overlay">
+                        <div class="face-guide"></div>
+                        <p>Position your face within the frame</p>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">
+                        <span class="btn-icon">🎥</span>
+                        Start Analysis
+                    </button>
+                    <button id="demoBtn" class="btn btn-secondary">
+                        <span class="btn-icon">🚀</span>
+                        Quick Demo
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Analysis Results</h2>
+                
+                <!-- Vital Signs -->
+                <div class="vitals-container">
+                    <div class="vital-card">
+                        <div class="vital-icon">❤️</div>
+                        <div class="vital-info">
+                            <label>Heart Rate</label>
+                            <div class="vital-value" id="heartRate">--</div>
+                            <span class="vital-unit">BPM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vital-card">
+                        <div class="vital-icon">📊</div>
+                        <div class="vital-info">
+                            <label>HRV</label>
+                            <div class="vital-value" id="hrvValue">--</div>
+                            <span class="vital-unit">ms</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vital-card risk-card">
+                        <div class="vital-icon" id="riskIcon">⚠️</div>
+                        <div class="vital-info">
+                            <label>Risk Level</label>
+                            <div class="vital-value" id="riskLevel">--</div>
+                            <span class="risk-score" id="riskScore">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waveform Visualization -->
+                <div class="waveform-container">
+                    <h3>Pulse Waveform</h3>
+                    <canvas id="waveformCanvas" width="800" height="200"></canvas>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-container">
+                    <h3>Personalized Recommendations</h3>
+                    <ul id="recommendationsList" class="recommendations-list">
+                        <li>Analysis in progress...</li>
+                    </ul>
+                </div>
+
+                <button id="restartBtn" class="btn btn-outline">
+                    <span class="btn-icon">🔄</span>
+                    Analyze Again
+                </button>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3>Analyzing Your Heart Health</h3>
+                <p>Please remain still while we process your video...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
