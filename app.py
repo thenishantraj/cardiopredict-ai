@@ -20,7 +20,7 @@ def index():
 def analyze_video():
     try:
         data = request.json
-        video_data = data['video_data']  # Base64 encoded video frames
+        video_data = data['video_data']  # Base64  encoded video frames
         
         # Process video and get analysis
         result = model.process_video_frames(video_data)
