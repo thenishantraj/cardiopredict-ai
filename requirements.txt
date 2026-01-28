@@ -2,5 +2,5 @@ Flask
 opencv-python
 numpy
 Pillow
-scipy
 Werkzeug
+scipy
