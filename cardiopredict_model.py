@@ -83,7 +83,7 @@ class CardioPredictModel:
         peak_times = peaks / self.fps
         intervals = np.diff(peak_times)
         
-        # Calculate RMSSD ( of Successive Differences)
+        # Calculate RMSSD (Root Mean Square of Successive Differences)
         if len(intervals) > 1:
             differences = np.diff(intervals)
             rmssd = np.sqrt(np.mean(differences ** 2)) * 1000  # Convert to ms
